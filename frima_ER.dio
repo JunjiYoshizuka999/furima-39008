@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="B8R3loPp5drXzvg6HLiV" name="ページ1">
-        <mxGraphModel dx="832" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="320" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -18,10 +18,10 @@
                 <mxCell id="22" value="&lt;span style=&quot;color: rgb(201, 209, 217); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; background-color: rgb(13, 17, 23);&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;encrypted_password&lt;/font&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="19" vertex="1">
                     <mxGeometry y="100" width="150" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="38" value="name_kana_second" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="19" vertex="1">
+                <mxCell id="38" value="second_name" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="19" vertex="1">
                     <mxGeometry y="130" width="150" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="39" value="name_kana_first" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="19" vertex="1">
+                <mxCell id="39" value="first_name" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="19" vertex="1">
                     <mxGeometry y="160" width="150" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="99" value="name_katakana_second" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="19" vertex="1">

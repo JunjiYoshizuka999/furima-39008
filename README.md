@@ -7,8 +7,8 @@
 |email                 | string | null: false, unique: true|
 |encrypted_password    | string | null: false              |
 |name                  | string | null: false              |
-|name_kana_second      | string | null: false              |
-|name_kana_first       | string | null: false              |
+|second_name           | string | null: false              |
+|first_name            | string | null: false              |
 |name_katakana_second  | string | null: false              | 
 |name_katakana_first   | string | null: false              |
 |birthday              | date   | null: false              |
