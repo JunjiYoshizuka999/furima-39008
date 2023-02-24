@@ -26,9 +26,9 @@
 |item_name           | string     | null: false                     |
 |category_id         | integer    | null: false                     |
 |situation_id        | integer    | null: false                     |
-|shipping_charges_id | integer    | null: false                     | 
+|shipping_charge_id  | integer    | null: false                     | 
 |prefecture_id       | integer    | null: false                     |
-|number_of_days_id   | integer    | null: false                     |
+|number_of_day_id    | integer    | null: false                     |
 |price               | integer    | null: false                     |
 |user                | references | null: false, foreign_key: true  |
 
@@ -54,12 +54,12 @@
 
 | Column          |  Type      | Options                         |
 | --------------- | ---------- | ------------------------------- |
+|prefecture_id    | integer    | null: false                     |
 |municipality     | string     | null: false                     |
 |address          | string     | null: false                     |
 |building_name    | string     |                                 |
-|prefecture_id    | integer    | null: false                     |
-|post_code        | integer    | null: false                     | 
-|telephone_number | integer    | null: false                     |
+|post_code        | string     | null: false                     | 
+|telephone_number | string     | null: false                     |
 |buyer            | references | null: false, foreign_key:true   |
 
 ### Association
