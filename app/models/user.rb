@@ -7,8 +7,8 @@ class User < ApplicationRecord
   # has_many :buyers
 
   validates :name, presence: true
-  validates :second_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]/ }
-  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]/ }
+  validates :second_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
+  validates :first_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
   validates :name_katakana_second, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :name_katakana_first, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :birthday, presence: true
