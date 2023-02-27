@@ -49,6 +49,18 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
       end
+      it 'passwordは英字のみでは登録できない' do
+        @user.password = 'aaaaaa'
+        @user.password_confirmation = 'aaaaaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
+      end
+      it 'passwordは全角では登録できない' do
+        @user.password = '１２３ＡＢＣ'
+        @user.password_confirmation = '１２３ＡＢＣ'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
+      end
       it 'passwordとpassword(確認)は、値の一致が必須' do
         @user.password = '123456'
         @user.password_confirmation = '654321'
@@ -65,10 +77,15 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include 'First name is invalid'
       end
-      it 'お名前(全角)は、全角（漢字・ひらがな・カタカナ）での入力が必須' do
+      it 'お名前(全角)の名前は、全角（漢字・ひらがな・カタカナ）での入力が必須' do
         @user.first_name = 'test'
         @user.valid?
         expect(@user.errors.full_messages).to include 'First name is invalid'
+      end
+      it 'お名前(全角)苗字は、全角（漢字・ひらがな・カタカナ）での入力が必須' do
+        @user.second_name = 'test'
+        @user.valid?
+        expect(@user.errors.full_messages).to include 'Second name is invalid'
       end
       it 'お名前カナ(全角)は、名字が必須' do
         @user.name_katakana_second = ''
@@ -80,10 +97,15 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include 'Name katakana first is invalid'
       end
-      it 'お名前カナ(全角)は、全角（カタカナ）での入力が必須' do
+      it 'お名前カナ(全角)の名前は、全角（カタカナ）での入力が必須' do
         @user.name_katakana_first = 'てすと'
         @user.valid?
         expect(@user.errors.full_messages).to include 'Name katakana first is invalid'
+      end
+      it 'お名前カナ(全角)苗字は、全角（カタカナ）での入力が必須' do
+        @user.name_katakana_second = 'てすと'
+        @user.valid?
+        expect(@user.errors.full_messages).to include 'Name katakana second is invalid'
       end
       it '生年月日が必須' do
         @user.birthday = ''
