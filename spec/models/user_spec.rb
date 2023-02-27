@@ -6,10 +6,9 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     context '新規登録できるとき' do
-      it "name、email、password、password_confirmation、second_name、first_name、name_katakana_second、name_katakana_first、birthdayが存在すれば登録できる" do
+      it 'name、email、password、password_confirmation、second_name、first_name、name_katakana_second、name_katakana_first、birthdayが存在すれば登録できる' do
         expect(@user).to be_valid
       end
-
     end
     context '新規登録できないとき' do
       it 'nameが必須である' do
@@ -33,11 +32,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Email is invalid')
       end
-      it "passwordが必須である" do
+      it 'passwordが必須である' do
         @user.password = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Password can't be blank")
-      end 
+      end
       it 'passwordは6文字以上必須' do
         @user.password = '12345'
         @user.password_confirmation = '12345'
@@ -59,32 +58,32 @@ RSpec.describe User, type: :model do
       it 'お名前(全角)は、名字が必須' do
         @user.second_name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "Second name is invalid"
+        expect(@user.errors.full_messages).to include 'Second name is invalid'
       end
       it 'お名前(全角)は、名前が必須' do
         @user.first_name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "First name is invalid"
+        expect(@user.errors.full_messages).to include 'First name is invalid'
       end
       it 'お名前(全角)は、全角（漢字・ひらがな・カタカナ）での入力が必須' do
         @user.first_name = 'test'
         @user.valid?
-        expect(@user.errors.full_messages).to include "First name is invalid"
+        expect(@user.errors.full_messages).to include 'First name is invalid'
       end
       it 'お名前カナ(全角)は、名字が必須' do
         @user.name_katakana_second = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "Name katakana second is invalid"
+        expect(@user.errors.full_messages).to include 'Name katakana second is invalid'
       end
       it 'お名前カナ(全角)は、名前が必須' do
         @user.name_katakana_first = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "Name katakana first is invalid"
+        expect(@user.errors.full_messages).to include 'Name katakana first is invalid'
       end
       it 'お名前カナ(全角)は、全角（カタカナ）での入力が必須' do
         @user.name_katakana_first = 'てすと'
         @user.valid?
-        expect(@user.errors.full_messages).to include "Name katakana first is invalid"
+        expect(@user.errors.full_messages).to include 'Name katakana first is invalid'
       end
       it '生年月日が必須' do
         @user.birthday = ''
