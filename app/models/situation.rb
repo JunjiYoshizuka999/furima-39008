@@ -6,11 +6,10 @@ class Situation < ActiveHash::Base
     { id: 4, name: '目だった傷や汚れなし' },
     { id: 5, name: 'やや傷や汚れあり' },
     { id: 6, name: '傷や汚れあり' },
-    { id: 7, name: '全体的に状態が悪い' },
+    { id: 7, name: '全体的に状態が悪い' }
 
   ]
 
   include ActiveHash::Associations
   has_many :items
-
 end
