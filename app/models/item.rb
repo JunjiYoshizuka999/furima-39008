@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   belongs_to :situation
   belongs_to :shipping_charge
   belongs_to :prefecture
-  belongs_to :numberofday
+  belongs_to :number_of_day
 
   # 通常のバリデーション
   validates :item_text, presence: true
