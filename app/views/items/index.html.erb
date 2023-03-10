@@ -129,17 +129,18 @@
     <ul class='item-lists'>
 
       
-      <% unless @item == nil? %>
+      <% unless @items == nil %>
         <% @items.each do |item| %>
           <li class='list'>
             <%= link_to item_path(item) do %>
             <div class='item-img-content'>
               <%= image_tag item.image, class: "item-img" %>
 
-
-              <div class='sold-out'>
-                <span>Sold Out!!</span>
-              </div>
+               <% unless item.buyer.nil? %>
+                <div class='sold-out'>
+                  <span>Sold Out!!</span>
+                </div>
+               <% end %>
 
 
             </div>

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :items
-  # has_many :buyers   "buyersモデル作成したらコメントアウトはずしてコメントは消す"
+  has_many :buyers  
 
   validates :name, presence: true
   validates :second_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
