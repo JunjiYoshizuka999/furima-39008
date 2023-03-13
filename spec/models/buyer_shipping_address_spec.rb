@@ -22,72 +22,72 @@ RSpec.describe BuyerShippingAddress, type: :model do
       it 'クレジットカードの情報（トークン）がないと購入できない' do
         @buyer_shipping_address.token = nil
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include("Token can't be blank")
+        expect(@buyer_shipping_address.errors.full_messages).to include("カード情報を入力してください")
       end
       it '郵便番号が空だと購入できない' do
         @buyer_shipping_address.post_code = ''
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include("Post code can't be blank")
+        expect(@buyer_shipping_address.errors.full_messages).to include("郵便番号を入力してください", "郵便番号にハイフンを入力してください")
       end
       it '郵便番号にハイフンがないと購入できない' do
         @buyer_shipping_address.post_code = '1234567'
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
+        expect(@buyer_shipping_address.errors.full_messages).to include("郵便番号にハイフンを入力してください")
       end
       it '都道府県が空では購入できない' do
         @buyer_shipping_address.prefecture_id = ''
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@buyer_shipping_address.errors.full_messages).to include("都道府県を入力してください")
       end
       it '都道府県が「--」では購入できない' do
         @buyer_shipping_address.prefecture_id = '1'
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@buyer_shipping_address.errors.full_messages).to include("都道府県を入力してください")
       end
       it '市町村が空では購入できない' do
         @buyer_shipping_address.municipality = ''
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include("Municipality can't be blank")
+        expect(@buyer_shipping_address.errors.full_messages).to include("市町村を入力してください")
       end
       it '番地が空では購入できない' do
         @buyer_shipping_address.address = ''
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include("Address can't be blank")
+        expect(@buyer_shipping_address.errors.full_messages).to include("番地を入力してください")
       end
       it '電話番号が空では購入できない' do
         @buyer_shipping_address.telephone_number = ''
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include("Telephone number can't be blank")
+        expect(@buyer_shipping_address.errors.full_messages).to include("電話番号を入力してください", "電話番号は数値で入力してください", "電話番号は10文字以上で入力してください")
       end
       it '電話番号が短すぎると購入できない' do
         @buyer_shipping_address.telephone_number = '123'
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include('Telephone number is too short (minimum is 10 characters)')
+        expect(@buyer_shipping_address.errors.full_messages).to include("電話番号は10文字以上で入力してください")
       end
       it '電話番号が長すぎると購入できない' do
         @buyer_shipping_address.telephone_number = '123456789123456789'
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include('Telephone number is too long (maximum is 11 characters)')
+        expect(@buyer_shipping_address.errors.full_messages).to include("電話番号は11文字以内で入力してください")
       end
       it '電話番号は半角数字のみ入力できる' do
         @buyer_shipping_address.telephone_number = '１２３４５６７８９'
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include('Telephone number is not a number')
+        expect(@buyer_shipping_address.errors.full_messages).to include("電話番号は数値で入力してください")
       end
       it '電話番号にハイフンがあると購入できない' do
         @buyer_shipping_address.telephone_number = '090-1234-5678'
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include('Telephone number is not a number')
+        expect(@buyer_shipping_address.errors.full_messages).to include("電話番号は数値で入力してください")
       end
       it 'userが紐ついていないと購入できない' do
         @buyer_shipping_address.user_id = ''
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include("User can't be blank")
+        expect(@buyer_shipping_address.errors.full_messages).to include("Userを入力してください")
       end
       it 'itemが紐ついていないと購入できない' do
         @buyer_shipping_address.item_id = ''
         @buyer_shipping_address.valid?
-        expect(@buyer_shipping_address.errors.full_messages).to include("Item can't be blank")
+        expect(@buyer_shipping_address.errors.full_messages).to include("Itemを入力してください")
       end
     end
   end
